@@ -1,5 +1,19 @@
 import { useContext, useEffect, useState, useRef } from 'react';
 
+import { View, Heading, useTheme } from '@aws-amplify/ui-react';
+
+import { NavBar } from '../components/NavBar';
+
 export const NotFound = () => {
-  return <div></div>;
+  const { tokens } = useTheme();
+
+  return (
+    <>
+      <NavBar />
+
+      <View textAlign="center" padding={tokens.space.large}>
+        <Heading>404 | Not Found</Heading>
+      </View>
+    </>
+  );
 };

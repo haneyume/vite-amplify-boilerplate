@@ -4,15 +4,16 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { withAuthenticator } from '@aws-amplify/ui-react';
 
 import { CustomAuthComponnts } from './components/CustomAuthComponnts';
+import { Home } from './pages/Home';
+import { Account } from './pages/Account';
 import { NotFound } from './pages/NotFound';
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<div />} />
-        <Route path="/account" element={<div />} />
-        <Route path="/project/:id" element={<div />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/account" element={<Account />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>

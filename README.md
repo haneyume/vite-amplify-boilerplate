@@ -1,4 +1,4 @@
-# my-amplify-app
+# vite-amplify-boilerplate
 
 | Category             | Command                   |
 | -------------------- | ------------------------- |
@@ -55,3 +55,17 @@ amplify status api -acm Blog
 | amplify mock api      | Run mock GraphQL server to simulate AppSync            |
 | amplify mock function | Locally test/invoke the function in your local backend |
 | amplify mock storage  | Run mock server to simulate S3                         |
+
+```graphql
+type Post @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  content: String!
+  media: AWSURL!
+}
+
+type User @model @auth(rules: [{ allow: public }]) {
+  id: ID!
+  nickname: String!
+  avatar: String!
+}
+```

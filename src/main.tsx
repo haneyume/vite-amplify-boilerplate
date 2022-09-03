@@ -7,7 +7,7 @@ import {
   defaultDarkModeOverride,
   translations,
 } from '@aws-amplify/ui-react';
-// import awsconfig from './aws-exports';
+import awsconfig from './aws-exports';
 
 import App from './App';
 import { AppProvider, AppContext } from './contexts/AppContext';
@@ -15,7 +15,7 @@ import { AppProvider, AppContext } from './contexts/AppContext';
 import './index.css';
 import '@aws-amplify/ui-react/styles.css';
 
-// Amplify.configure(awsconfig);
+Amplify.configure(awsconfig);
 I18n.putVocabularies(translations);
 
 const theme = {

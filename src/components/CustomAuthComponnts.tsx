@@ -9,8 +9,8 @@ export const CustomAuthComponnts = {
     return (
       <View textAlign="center" padding={tokens.space.large}>
         <Image
-          alt="Amplify logo"
           src="https://docs.amplify.aws/assets/logo-dark.svg"
+          alt="Amplify logo"
         />
       </View>
     );
