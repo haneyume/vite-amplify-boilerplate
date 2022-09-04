@@ -69,3 +69,5 @@ type User @model @auth(rules: [{ allow: public }]) {
   avatar: String!
 }
 ```
+
+npx envinfo --system --npmPackages vite,@vitejs/plugin-vue --binaries --browsers

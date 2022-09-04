@@ -2,7 +2,9 @@ import { useContext, useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { DataStore, Predicates } from 'aws-amplify';
-import { Flex, Card, Text, Button } from '@aws-amplify/ui-react';
+import { Flex, Card, Text, Image, Button } from '@aws-amplify/ui-react';
+
+import moment from 'moment';
 
 import { Post } from '../models';
 
@@ -25,7 +27,9 @@ export const Home = () => {
       fetchPosts();
     });
 
-    return () => subscription.unsubscribe();
+    return () => {
+      subscription.unsubscribe();
+    };
   }, []);
 
   const onCreate = () => {
@@ -63,9 +67,11 @@ export const Home = () => {
           return (
             <Card key={index} width="22%">
               <Text>{post.id}</Text>
-              <Text>{post.media}</Text>
+              <Image src={post.media} alt="image" />
               <Text>{post.content}</Text>
-              <Text>{post.createdAt}</Text>
+              <Text>
+                {moment(post.createdAt).format('YYYY-MM-DD HH:mm:ss')}
+              </Text>
             </Card>
           );
         })}
